@@ -1,8 +1,11 @@
-# Bank Management Microservices
+# Bank Management System 
 
 ## Overview
-This application is designed to manage banking operations through various microservices. 
-It provides functionality for user authentication, account management, and transaction handling.
+This application is designed to manage banking operations through various services. 
+It provides functionality for user authentication, account management, and transaction handling. 
+The system ensures secure, efficient, and scalable management of banking services.
+
+
 
 ## Technologies Used
 - **Spring Boot**: Framework for creating stand-alone, production-grade Spring-based applications.
