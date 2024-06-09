@@ -10,7 +10,7 @@ public class homeController {
 
 @GetMapping("/hi")
 public String get(){
-    return "hollla";
+    return "hollla amigos";
 }
 
 }
