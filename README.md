@@ -41,6 +41,7 @@ The Transaction Service handles deposit and withdrawal transactions.
 
 - **Deposit:** Adds a specified amount to the user's account balance.
 - **Withdraw:** Deducts a specified amount from the user's account balance, checking for sufficient funds.
+- **Transfer** send money to any one you need 
 
 
 ### User Service
