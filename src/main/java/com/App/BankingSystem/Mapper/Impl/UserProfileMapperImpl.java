@@ -1,7 +1,7 @@
 package com.App.BankingSystem.Mapper.Impl;
 
 import com.App.BankingSystem.Mapper.UserProfileMapper;
-import com.App.BankingSystem.model.Dto.UserProfileResponse;
+import com.App.BankingSystem.model.Dto.Response.UserProfileResponse;
 import com.App.BankingSystem.model.entity.Users;
 import org.springframework.stereotype.Component;
 

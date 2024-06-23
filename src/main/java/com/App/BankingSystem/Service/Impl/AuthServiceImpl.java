@@ -4,7 +4,7 @@ package com.App.BankingSystem.Service.Impl;
 import com.App.BankingSystem.Exception.*;
 import com.App.BankingSystem.Security.CustomeUserDetailsService;
 import com.App.BankingSystem.Security.JwtUtil;
-import com.App.BankingSystem.SpringUtils.SecurityConstants;
+import com.App.BankingSystem.Security.SecurityConstants;
 import com.App.BankingSystem.Service.AuthService;
 import com.App.BankingSystem.model.Dto.Security.*;
 import com.App.BankingSystem.model.entity.Role;

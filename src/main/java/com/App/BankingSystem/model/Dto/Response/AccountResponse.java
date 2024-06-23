@@ -1,4 +1,4 @@
-package com.App.BankingSystem.model.Dto;
+package com.App.BankingSystem.model.Dto.Response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

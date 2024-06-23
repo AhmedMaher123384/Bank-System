@@ -4,7 +4,7 @@ package com.App.BankingSystem.Service.Impl;
 import com.App.BankingSystem.Exception.TokenValidationException;
 import com.App.BankingSystem.Security.CustomeUserDetailsService;
 import com.App.BankingSystem.Security.JwtUtil;
-import com.App.BankingSystem.SpringUtils.SecurityConstants;
+import com.App.BankingSystem.Security.SecurityConstants;
 import com.App.BankingSystem.Service.LogoutService;
 import com.App.BankingSystem.model.Dto.Security.LogoutRequest;
 import com.App.BankingSystem.model.entity.AccessTokenBlackList;

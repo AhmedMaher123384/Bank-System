@@ -2,7 +2,7 @@ package com.App.BankingSystem.Service;
 
 import com.App.BankingSystem.Mapper.AccountMapper;
 import com.App.BankingSystem.Service.Impl.AccountServiceImpl;
-import com.App.BankingSystem.model.Dto.AccountResponse;
+import com.App.BankingSystem.model.Dto.Response.AccountResponse;
 import com.App.BankingSystem.model.entity.Account;
 import com.App.BankingSystem.model.entity.Users;
 import com.App.BankingSystem.repository.AccountRepository;

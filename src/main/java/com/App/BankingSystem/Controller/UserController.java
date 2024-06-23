@@ -1,7 +1,7 @@
 package com.App.BankingSystem.Controller;
 
 import com.App.BankingSystem.Service.Impl.UserServiceImpl;
-import com.App.BankingSystem.model.Dto.UserProfileResponse;
+import com.App.BankingSystem.model.Dto.Response.UserProfileResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

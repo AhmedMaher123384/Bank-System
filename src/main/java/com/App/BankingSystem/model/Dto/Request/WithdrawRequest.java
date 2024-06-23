@@ -1,4 +1,4 @@
-package com.App.BankingSystem.model.Dto;
+package com.App.BankingSystem.model.Dto.Request;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;

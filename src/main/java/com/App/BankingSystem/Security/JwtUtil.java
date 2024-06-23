@@ -15,7 +15,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-import static com.App.BankingSystem.SpringUtils.SecurityConstants.*;
+import static com.App.BankingSystem.Security.SecurityConstants.*;
 
 
 @Component

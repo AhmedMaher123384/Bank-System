@@ -1,7 +1,6 @@
 package com.App.BankingSystem.Security;
 
 
-import com.App.BankingSystem.SpringUtils.SecurityConstants;
 import com.App.BankingSystem.repository.AccessTokenBlackListRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

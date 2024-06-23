@@ -1,7 +1,7 @@
 package com.App.BankingSystem.Mapper.Impl;
 
 import com.App.BankingSystem.Mapper.AccountMapper;
-import com.App.BankingSystem.model.Dto.AccountResponse;
+import com.App.BankingSystem.model.Dto.Response.AccountResponse;
 import com.App.BankingSystem.model.entity.Account;
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package com.App.BankingSystem.SpringUtils;
+package com.App.BankingSystem.Security;
 
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;

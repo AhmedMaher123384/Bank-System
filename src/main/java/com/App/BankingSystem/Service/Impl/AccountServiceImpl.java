@@ -3,25 +3,27 @@ package com.App.BankingSystem.Service.Impl;
 import com.App.BankingSystem.Mapper.AccountMapper;
 import com.App.BankingSystem.Service.AccountService;
 import com.App.BankingSystem.SpringUtils.Utils;
-import com.App.BankingSystem.model.Dto.AccountResponse;
+import com.App.BankingSystem.model.Dto.Response.AccountResponse;
 import com.App.BankingSystem.model.entity.Account;
 import com.App.BankingSystem.model.entity.Users;
 import com.App.BankingSystem.repository.AccountRepository;
 import com.App.BankingSystem.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
-public class AccountServiceImpl  implements AccountService {
+public class AccountServiceImpl implements AccountService {
     @Autowired
-    private  UserRepository userRepository;
+    private UserRepository userRepository;
     @Autowired
-    private  AccountRepository accountRepository;
+    private AccountRepository accountRepository;
     @Autowired
-    private  AccountMapper accountMapper;
+    private AccountMapper accountMapper;
 
     @Override
     public AccountResponse createNewAccount() {
@@ -31,8 +33,7 @@ public class AccountServiceImpl  implements AccountService {
                 .orElseThrow(() -> new EntityNotFoundException("User " + email + " Not Found"));
 
         Account account = accountRepository.save(
-                Account
-                        .builder()
+                Account.builder()
                         .cardNumber(generateUniqueCardNumber())
                         .cvv(Utils.generateCVV())
                         .balance(0.0)
@@ -50,15 +51,31 @@ public class AccountServiceImpl  implements AccountService {
         Users user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new EntityNotFoundException("User " + email + " Not Found"));
 
-        return accountRepository
-                .findAllByUser(user)
-                .stream()
+        return accountRepository.findAllByUser(user).stream()
                 .map(accountMapper::toResponseModel)
                 .toList();
     }
 
+    @Override
+    public double getBalance(String cardNumber) {
+        Account account = accountRepository.findByCardNumber(cardNumber)
+                .orElseThrow(() -> new BadCredentialsException("Bad credentials"));
+        return account.getBalance();
+    }
 
-    public String generateUniqueCardNumber() {
+    @Override
+    public Account findByCardNumber(String cardNumber) {
+        return accountRepository.findByCardNumber(cardNumber)
+                .orElseThrow(() -> new BadCredentialsException("Card number not found"));
+    }
+
+    @Override
+    public Account findByCardNumberAndCvv(String cardNumber, String cvv) {
+        return accountRepository.findByCardNumberAndCvv(cardNumber, cvv)
+                .orElseThrow(() -> new BadCredentialsException("Card number and CVV do not match"));
+    }
+
+    private String generateUniqueCardNumber() {
         String cardNumber = Utils.generateCardNumber();
 
         while (accountRepository.existsByCardNumber(cardNumber)) {
@@ -68,4 +85,9 @@ public class AccountServiceImpl  implements AccountService {
         return cardNumber;
     }
 
+    @Override
+    public void updateAccountBalance(Account account, double amount) {
+        account.setBalance(account.getBalance() + amount);
+        accountRepository.save(account);
+    }
 }
